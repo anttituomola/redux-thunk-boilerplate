@@ -1,29 +1,22 @@
 import { createSlice } from "@reduxjs/toolkit"
 
-export const counterSlice = createSlice({
-    name: "counter",
+export const userSlice = createSlice({
+    name: "users",
 
     // Initial state on pakollinen, jotta Redux saa jotain dataa sovelluksen latautuessa ensimmäistä kertaa.
     initialState: {
-        value: 0,
-        incrementValue: 0
+        users: [],
     },
 
     /* Tässä käytetään mutatoivaa eli suoraan arvoa muuttavaa metodia (state.value += 1)
     Se on mahdollista ja sallittua ainoastaan, kun käytämme Toolkitin createSlice-metodia,
     jonka asiosta datan muuttumattomuus saavutetaan kulissien takana. */
     reducers: {
-        increment: state => {
-            state.value += 1
+        hydrateUsers: (state, action) => {
+            state.users = action.payload
         },
-        decrement: state => {
-            state.value -= 1
-        },
-        incrementByAmount: (state, action) => {
-            state.incrementValue = parseInt(action.payload)
-        }
     }
 })
 
-export const { increment, decrement, incrementByAmount } = counterSlice.actions
-export default counterSlice.reducer
+export const { hydrateUsers } = userSlice.actions
+export default userSlice.reducer
