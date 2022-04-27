@@ -1,5 +1,5 @@
 # Redux thunks
-[Blog post explaining Redux thunks in Finnish]()
+[Blog post explaining Redux thunks in Finnish](https://anttituomola.fi/redux-ja-thunk-middleware/)
 
 # Recourses and links
 These links help me understand the concept of thunks:
