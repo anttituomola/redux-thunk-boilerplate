@@ -7,6 +7,7 @@ import { Users } from './components/Users'
 
 function App() {
   const dispatch = useDispatch()
+  
   useEffect(() => {
     dispatch(fetchData())
   }, [dispatch])
